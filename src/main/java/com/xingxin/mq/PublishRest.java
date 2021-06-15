@@ -1,4 +1,4 @@
-package com.xingxin.rabbitmq;
+package com.xingxin.mq;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
