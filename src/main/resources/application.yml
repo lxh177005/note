@@ -25,3 +25,10 @@ mybatis-plus:
 
 logging:
   config: classpath:log4j2.xml
+
+##tinyid配置  (tinyid.server=localhost:9999/gateway,ip2:port2/prefix,...)
+tinyid:
+  server: 127.0.0.1:9999
+  token: 0f673adf80504e2eaa552f5d791b644c
+
+
