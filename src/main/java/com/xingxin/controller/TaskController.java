@@ -20,12 +20,11 @@ public class TaskController {
 
     @GetMapping("/good")
     @Scheduled(cron = "0 30/10 10,14,18,22 ? * 2,4,6")
-    public LocalDateTime goodLuck() {
+    public void goodLuck() {
         LocalDateTime now = LocalDateTime.now();
         log.info("info={}",  now);
         log.debug("debug={}", now);
         log.error("error={}", now);
         log.warn("warn is {}", now);
-        return now;
     }
 }
