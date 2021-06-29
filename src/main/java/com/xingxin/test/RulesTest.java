@@ -29,6 +29,9 @@ public class RulesTest {
         System.out.println(new Random().nextInt());
         System.out.println(new Random().nextInt(100));
 
+        int m = 1 % 2;
+        int n = 1/2;
+        System.out.println(m + "," + n);
 
     }
 }
