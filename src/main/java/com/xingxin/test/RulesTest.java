@@ -42,8 +42,10 @@ public class RulesTest {
         list.add("100.png");
         list.sort(Comparator.comparingInt(RulesTest::strToInt));
         list.forEach(System.out::print);
+
     }
     private static int strToInt(String str) {
         return Integer.parseInt(str.substring(0,str.indexOf(".")));
     }
+
 }

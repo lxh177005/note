@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 public class DownloadImages {
     public static void main(String[] args)  {
         //读取文件
-        List<String> lines = CSVFileUtil.getLines("C:\\Users\\dagege\\Desktop\\searchImg(1).csv", "UTF-8");
+        List<String> lines = CSVFileUtil.getLines("C:\\Users\\dagege\\Desktop\\工作簿1.csv", "UTF-8");
         List<Map<String, String>> mapList = CSVFileUtil.parseList(lines);
         System.out.println(Arrays.toString(mapList.toArray()));
 
