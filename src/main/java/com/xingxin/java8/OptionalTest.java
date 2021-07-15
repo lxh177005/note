@@ -1,6 +1,8 @@
 package com.xingxin.java8;
 
 import com.xingxin.entity.Person;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Optional;
@@ -31,5 +33,30 @@ public class OptionalTest {
         // 过滤
         String bbb = Optional.ofNullable(person).map(Person::getEmail).filter(p6 -> p6.contains("lxhaaa")).orElse("bbb");
         System.out.println("bbb = " + bbb);
+
+        // map and flatmap
+        String student = Optional.ofNullable(new School(1, null))
+                .map(School::getStudent)
+                .map(Student::getName)
+                .orElse("abc");
+        System.out.println("student = " + student);
+//        Student student1 = Optional.ofNullable(new School(1, null))
+//                .flatMap(School::getStudent)
+//                .map(Student::getName)
+//                .orElse("zhangsan");
+//        System.out.println("student = " + student);
+
+    }
+    @Data
+    @AllArgsConstructor
+    static class School{
+        private Integer id;
+        private Student student;
+    }
+    @Data
+    @AllArgsConstructor
+     static class Student{
+        private Integer id;
+        private String name;
     }
 }
