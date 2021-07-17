@@ -5,6 +5,7 @@ import org.noggit.JSONUtil;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * map 处理之后，list结构还是原来的，flatMap处理之后，list结果改为一级了
@@ -28,6 +29,12 @@ public class FlatMapTest {
         eggs.stream()
                 .flatMap(egg -> egg.stream().map(e -> e.replace("鸡", "煎")))
                 .forEach(System.out::println);
+
+        // 单词列表["Hello","World"]，需要返回["H","e","l", "o","W","r","d"]
+        List<String> list = Arrays.asList("Hello", "World");
+        List<String[]> collect = list.stream().map(s -> s.split("")).collect(Collectors.toList());
+        List<String> result = collect.stream().flatMap(Arrays::stream).distinct().collect(Collectors.toList());
+        System.out.println("result = " + result);
 
     }
 }
