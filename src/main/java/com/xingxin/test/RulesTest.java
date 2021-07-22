@@ -34,14 +34,34 @@ public class RulesTest {
 //        System.out.println(m + "," + n);
 
 
-        List<String> list = new ArrayList<>();
-        list.add("0.png");
-        list.add("10.png");
-        list.add("3.png");
-        list.add("4.png");
-        list.add("100.png");
-        list.sort(Comparator.comparingInt(RulesTest::strToInt));
-        list.forEach(System.out::print);
+//        List<String> list = new ArrayList<>();
+//        list.add("0.png");
+//        list.add("10.png");
+//        list.add("3.png");
+//        list.add("4.png");
+//        list.add("100.png");
+//        list.sort(Comparator.comparingInt(RulesTest::strToInt));
+//        list.forEach(System.out::print);
+
+
+//        String str1 = "-A-_sdg123";
+//        System.out.println(str1.matches("^[0-9a-zA-Z_-]+$"));
+
+
+
+        String s = Integer.toHexString(16);
+        System.out.println("s = " + s);
+
+        int i = Integer.parseInt(s, 16);
+        System.out.println("i = " + i);
+
+
+        // 没搞明白 OXH 和 FXH
+        String pic = "62C204";
+        String str = pic.replaceAll(" ", "");
+        double result  = (Integer.parseInt(str.substring(0, 4), 16) / 32768.0)
+                * Math.pow(2, Integer.parseInt(str.substring(4, 6), 16));
+        System.out.println("result = " + result);
 
     }
     private static int strToInt(String str) {
