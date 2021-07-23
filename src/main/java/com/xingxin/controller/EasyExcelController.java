@@ -20,7 +20,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/excel")
-public class ExcelController {
+public class EasyExcelController {
 
     @Autowired
     private CinemaMapper cinemaMapper;
