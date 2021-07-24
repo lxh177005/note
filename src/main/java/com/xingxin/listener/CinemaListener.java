@@ -20,7 +20,7 @@ public class CinemaListener extends AnalysisEventListener<Cinema> {
 
     @Override
     public void invoke(Cinema cinema, AnalysisContext analysisContext) {
-        log.info(JSON.toJSONString(cinema));
+        log.info("读取到的数据：{}", JSON.toJSONString(cinema));
     }
 
     @Override
