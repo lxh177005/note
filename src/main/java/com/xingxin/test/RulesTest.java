@@ -1,7 +1,14 @@
 package com.xingxin.test;
 
+import com.xingxin.entity.Person;
+import org.apache.commons.lang3.ObjectUtils;
 import org.noggit.JSONUtil;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 /**
@@ -9,7 +16,7 @@ import java.util.*;
  * @date 2021/6/21
  */
 public class RulesTest {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
 //        Map<String, String> map = new HashMap<>();
 //        map.put("aaa", "111");
 //        map.put("bbb", "222");
@@ -49,19 +56,36 @@ public class RulesTest {
 
 
 
-        String s = Integer.toHexString(16);
-        System.out.println("s = " + s);
+//        String s = Integer.toHexString(16);
+//        System.out.println("s = " + s);
+//
+//        int i = Integer.parseInt(s, 16);
+//        System.out.println("i = " + i);
+//
+//
+//        // 没搞明白 OXH 和 FXH
+//        String pic = "62C204";
+//        String str = pic.replaceAll(" ", "");
+//        double result  = (Integer.parseInt(str.substring(0, 4), 16) / 32768.0)
+//                * Math.pow(2, Integer.parseInt(str.substring(4, 6), 16));
+//        System.out.println("result = " + result);
 
-        int i = Integer.parseInt(s, 16);
-        System.out.println("i = " + i);
+//        Person person = new Person();
+//        System.out.println(person == null);
+//        System.out.println(ObjectUtils.isEmpty(person));
+//        Person person1 = null;
+//        System.out.println(ObjectUtils.isEmpty(person1));
 
+        String strTime = "2020-02-02 02:00:00";
 
-        // 没搞明白 OXH 和 FXH
-        String pic = "62C204";
-        String str = pic.replaceAll(" ", "");
-        double result  = (Integer.parseInt(str.substring(0, 4), 16) / 32768.0)
-                * Math.pow(2, Integer.parseInt(str.substring(4, 6), 16));
-        System.out.println("result = " + result);
+        // str to date  (throw exception)
+        Date parse = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(strTime);
+        System.out.println("parse = " + parse);
+        // str to date
+        LocalDateTime localDateTime = LocalDateTime.parse(strTime, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+        Date from = Date.from(localDateTime.atZone(ZoneId.systemDefault()).toInstant());
+        System.out.println("from = " + from);
+
 
     }
     private static int strToInt(String str) {
