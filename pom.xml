@@ -16,7 +16,13 @@
     </properties>
 
     <dependencies>
-        
+
+        <dependency>
+            <groupId>cn.afterturn</groupId>
+            <artifactId>easypoi-spring-boot-starter</artifactId>
+            <version>4.1.0</version>
+        </dependency>
+
         <dependency>
             <groupId>com.xiaoju.uemc.tinyid</groupId>
             <artifactId>tinyid-client</artifactId>
