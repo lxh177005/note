@@ -4,13 +4,16 @@ import lombok.Data;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.core.util.JsonUtils;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @SpringBootTest
+@RunWith(SpringRunner.class)
 class NoteApplicationTests {
 
     @Test

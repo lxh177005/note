@@ -144,6 +144,19 @@
 
     <build>
         <plugins>
+            <!--for the individual test results 跳过单元测试 或者idea 3种方式：
+              1: mvn clean package -DskipTests
+              2: idea maven-> 闪电图标（skip tests）
+              3： pom 引入跳过单元测试
+             -->
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-surefire-plugin</artifactId>-->
+<!--                <configuration>-->
+<!--                    <testFailureIgnore>true</testFailureIgnore>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
