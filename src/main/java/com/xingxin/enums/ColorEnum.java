@@ -1,4 +1,4 @@
-package com.xingxin.test;
+package com.xingxin.enums;
 
 /**
  * 枚举的使用

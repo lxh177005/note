@@ -6,6 +6,9 @@ package com.xingxin.test;
 
 
 
+import com.alibaba.fastjson.JSONObject;
+import lombok.Data;
+import lombok.ToString;
 import org.apache.commons.collections4.CollectionUtils;
 
 import java.util.ArrayList;
@@ -36,7 +39,20 @@ public class bsTest {
         System.out.println("collect = " + collect);
         collect.forEach(System.out::print);
 
-        Integer i = null;
-        System.out.println( 1 == i);
+//        Integer i = null;
+//        System.out.println( 1 == i);
+        String json = "{\"hasUserPickUp\":true, \"hasShopDelivery\": true}";
+        DeliveryModeVO deliveryModeVO = JSONObject.parseObject(json, DeliveryModeVO.class);
+        System.out.println("deliveryModeVO = " + deliveryModeVO);
+
+    }
+
+    @Data
+    @ToString
+    public static class DeliveryModeVO {
+        private Boolean hasUserPickUp = false;
+        private Boolean hasShopDelivery  = false;
+        private Boolean hasCityDelivery  = false;
+        private Boolean hasNoDelivery = false;
     }
 }

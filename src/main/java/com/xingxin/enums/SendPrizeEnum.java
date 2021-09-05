@@ -1,4 +1,4 @@
-package com.xingxin.test;
+package com.xingxin.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

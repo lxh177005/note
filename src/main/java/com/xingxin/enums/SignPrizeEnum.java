@@ -1,7 +1,4 @@
-package com.xingxin.test;
-
-import com.xingxin.entity.Cinema;
-import com.xingxin.utils.ResponseResult;
+package com.xingxin.enums;
 
 /**
  * @author liuxh
