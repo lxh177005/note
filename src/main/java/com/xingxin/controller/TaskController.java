@@ -1,6 +1,7 @@
 package com.xingxin.controller;
 
 
+import com.xingxin.annotation.XingxinName;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,10 +19,15 @@ import java.util.Map;
 @Slf4j
 @RestController
 @RequestMapping("/task")
+@XingxinName
 public class TaskController {
+
+    @XingxinName
+    private String userName;
 
     @GetMapping("/good")
     @Scheduled(cron = "0 30/10 10,14,18,22 ? * 2,4,6")
+    @XingxinName
     public void goodLuck() {
         LocalDateTime now = LocalDateTime.now();
         log.info("info={}",  now);
