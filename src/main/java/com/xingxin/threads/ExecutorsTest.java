@@ -12,7 +12,9 @@ public class ExecutorsTest {
         ExecutorService executorService = Executors.newCachedThreadPool();
         for (int i = 0; i < 10; i++) {
             int finalI = i;
+            System.out.println("---------------------");
             executorService.execute(() -> System.out.println(Thread.currentThread().getName() + ":" + finalI));
+            System.out.println("=====================");
         }
     }
 }
