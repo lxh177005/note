@@ -2,7 +2,10 @@ package com.xingxin.test;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 /**
  * @author liuxh
@@ -25,6 +28,24 @@ public class GXTest {
 
         int a =199;
         System.out.println(a/100);
+
+
+        ArrayList<Long> longs = new ArrayList<>();
+        longs.add(1L);
+        longs.add(2L);
+        longs.add(3L);
+        System.out.println("longs = " + longs);
+
+        String collect = longs.stream().map(String::valueOf).collect(Collectors.joining(","));
+        System.out.println("collect = " + collect);
+
+        List<String> strings = longs.stream().map(String::valueOf).collect(Collectors.toList());
+        String join = String.join(",", strings);
+        System.out.println("join = " + join);
+
+        String join1 = String.join(".", new ArrayList<>());
+        System.out.println("join1 = " + join1);
+
 
     }
 }
