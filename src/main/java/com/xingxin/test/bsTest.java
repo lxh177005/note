@@ -45,6 +45,9 @@ public class bsTest {
         DeliveryModeVO deliveryModeVO = JSONObject.parseObject(json, DeliveryModeVO.class);
         System.out.println("deliveryModeVO = " + deliveryModeVO);
 
+        String str1 = "asdfdsadgdagsdf \n sdfdsgagsd";
+        System.out.println("str1 = " + str1);
+
     }
 
     @Data
