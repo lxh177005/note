@@ -29,7 +29,7 @@ public class CodeGenerator {
         //2、数据源配置
         DataSourceConfig dataSourceConfig = new DataSourceConfig();
         //这套配置是Oracle的配置
-        dataSourceConfig.setUrl("jdbc:mysql://localhost:3306/user?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC")
+        dataSourceConfig.setUrl("jdbc:mysql://localhost:3306/blossom?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC")
                 .setDriverName("com.mysql.cj.jdbc.Driver")
                 //数据库登录名
                 .setUsername("root")
@@ -45,7 +45,7 @@ public class CodeGenerator {
                 .setNaming(NamingStrategy.underline_to_camel)
 //                TODO
                 //需要导入的表的名称,支持多表，"，"隔开
-                .setInclude("tz_expert_token", "tz_user_expert")
+                .setInclude("tz_free_activity", "tz_free_order","tz_free_prize","tz_free_prod")
                 //需要导入表删除前缀（如：xxx_xx,删除完前缀是xx,只剩下表名）
                 .setTablePrefix("tz_");
 
