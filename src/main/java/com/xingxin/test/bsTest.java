@@ -14,6 +14,7 @@ import org.apache.commons.collections4.CollectionUtils;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 /**
@@ -47,6 +48,39 @@ public class bsTest {
 
         String str1 = "asdfdsadgdagsdf \n sdfdsgagsd";
         System.out.println("str1 = " + str1);
+
+        double a = 1.0;
+        int b = 1;
+        double c = Double.parseDouble(String.valueOf(b));
+        System.out.println(Objects.equals(a, c));
+
+        String string = "1,1";
+        List<String> strings = Arrays.asList(string.split(","));
+        System.out.println("strings = " + strings);
+
+        double d = 0.0;
+        boolean b1 = d % 2 == 0;
+        System.out.println("b1 = " + b1);
+        System.out.println(d / 2);
+
+        int i = 3;
+        System.out.println( 99 /2);
+
+        String s = "123";
+        String[] split = s.split(",");
+        System.out.println("split = " + Arrays.toString(split));
+        List<String> strings1 = Arrays.asList(split);
+        System.out.println("strings1 = " + strings1);
+        boolean empty1 = strings1.isEmpty();
+        System.out.println("empty1 = " + empty1);
+
+        int ii = 1;
+        System.out.println(ii /2);
+
+        Integer integer = null;
+
+        Integer integer1 = 1;
+        System.out.println(Objects.equals(integer1, integer));
 
 
 
