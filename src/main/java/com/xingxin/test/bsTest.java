@@ -82,7 +82,11 @@ public class bsTest {
         Integer integer1 = 1;
         System.out.println(Objects.equals(integer1, integer));
 
-
+        double d1 = 3.00;
+        double ceil = Math.ceil(d1);
+        System.out.println("ceil = " + ceil);
+        int ceil1 = (int) ceil;
+        System.out.println("ceil1 = " + ceil1);
 
 
     }
