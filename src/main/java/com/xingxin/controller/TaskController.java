@@ -43,7 +43,6 @@ public class TaskController {
     }
 
     @GetMapping(value = "/test")
-
     public void getCode(String url , HttpServletResponse response) throws IOException {
         // 设置响应流信息
         response.setContentType("image/jpg");
@@ -58,5 +57,15 @@ public class TaskController {
         BitMatrix bitMatrix = QRCodeUtils.createCode(url);
         //以流的形式输出到前端
         MatrixToImageWriter.writeToStream(bitMatrix , "jpg" , stream);
+    }
+
+    @GetMapping("/ok")
+    public String getTest() {
+        return "get ok";
+    }
+
+    @PostMapping("/ok")
+    public String postTest() {
+        return "post ok";
     }
 }

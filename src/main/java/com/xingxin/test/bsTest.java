@@ -7,14 +7,17 @@ package com.xingxin.test;
 
 
 import com.alibaba.fastjson.JSONObject;
+import com.xingxin.enums.YesOrNoEnum;
 import lombok.Data;
 import lombok.ToString;
+import ma.glasnost.orika.impl.util.StringUtil;
 import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.BeanUtils;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -23,6 +26,12 @@ import java.util.stream.Collectors;
  */
 public class bsTest {
     public static void main(String[] args) {
+
+//        {"time":"1636983109000"}
+        LocalDateTime localDateTime = LocalDateTime.ofEpochSecond(1636983109, 0, ZoneOffset.ofHours(8));
+        System.out.println("localDateTime = " + localDateTime);
+
+
         List<Integer> list1 = Arrays.asList(1, 2, 3);
         List<Integer> list2 = Arrays.asList(2, 5, 8);
         ArrayList<Object> list3 = new ArrayList<>();
@@ -87,6 +96,34 @@ public class bsTest {
         System.out.println("ceil = " + ceil);
         int ceil1 = (int) ceil;
         System.out.println("ceil1 = " + ceil1);
+
+        String str2 = " afsadf\n\n\n  sfdas  ";
+        String replace = str2.replace("\n", "");
+        System.out.println("replace = " + replace);
+        String trim = str2.trim();
+        System.out.println("trim = " + trim);
+        String s1 = StringUtils.trimToEmpty(str1);
+        System.out.println("s1 = " + s1);
+        String s2 = str2.replaceFirst(" ", "");
+        System.out.println("s2 = " + s2);
+
+        String s3 = str2.trim().replaceAll("\\s*|\t|\r|\n", "");
+        System.out.println(s3);
+
+        String s5 = "   AA \n BB \n CC \n ";
+        System.out.println("s5 = " + s5);
+        String trim1 = s5.trim().replace("\n", "");
+        System.out.println(trim1);
+
+        List<Integer> l3 = Arrays.asList(1, 2, 3);
+        List<String> l4 = new ArrayList<>();
+
+        System.out.println("l4 = " + l4);
+
+        Integer value = YesOrNoEnum.YES.value();
+        System.out.println("value = " + value);
+        Integer value1 = YesOrNoEnum.NO.value();
+        System.out.println("value1 = " + value1);
 
 
     }
