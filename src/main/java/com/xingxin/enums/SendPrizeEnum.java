@@ -27,7 +27,7 @@ public enum SendPrizeEnum {
                 return typeEnum.impl;
             }
         }
-        return null;
+        return "";
     }
 
     public static void main(String[] args) {

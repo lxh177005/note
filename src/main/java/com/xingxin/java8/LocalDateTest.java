@@ -1,21 +1,25 @@
 package com.xingxin.java8;
 
-import org.apache.commons.collections4.CollectionUtils;
-
-import java.sql.Date;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAdjusters;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
-import java.util.stream.Collectors;
 
 public class LocalDateTest {
     public static void main(String[] args) {
+
+        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime tomorrow = now.plusDays(1);
+        boolean before = now.isBefore(tomorrow);
+        System.out.println("before = " + before);
+        boolean before1 = tomorrow.isBefore(now);
+        System.out.println("before1 = " + before1);
+        boolean after = now.isAfter(tomorrow);
+        System.out.println("after = " + after);
+        boolean after1 = tomorrow.isAfter(now);
+        System.out.println("after1 = " + after1);
+
         //获取本地日期
         LocalDate localDate = LocalDate.now();
         System.out.println("localDate = " + localDate);
@@ -45,9 +49,8 @@ public class LocalDateTest {
         LocalDate localDate1 = LocalDate.of(Integer.parseInt(date[0]), Integer.parseInt(date[1]), 1);
         // 待生效时间
         LocalDateTime nextLocalDateTime = LocalDateTime.of(localDate1, LocalTime.now());
-        LocalDateTime beginTime =nextLocalDateTime.with(TemporalAdjusters.firstDayOfMonth()).with(LocalTime.MIN);
+        LocalDateTime beginTime = nextLocalDateTime.with(TemporalAdjusters.firstDayOfMonth()).with(LocalTime.MIN);
         LocalDateTime endTime = nextLocalDateTime.with(TemporalAdjusters.lastDayOfMonth()).with(LocalTime.MAX).withNano(0);
-
 
 
         System.out.println("beginTime = " + beginTime);
