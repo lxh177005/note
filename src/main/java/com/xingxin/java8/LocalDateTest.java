@@ -1,13 +1,12 @@
 package com.xingxin.java8;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAdjusters;
 
 public class LocalDateTest {
     public static void main(String[] args) {
+
 
         LocalDateTime now = LocalDateTime.now();
         LocalDateTime tomorrow = now.plusDays(1);
@@ -19,6 +18,19 @@ public class LocalDateTest {
         System.out.println("after = " + after);
         boolean after1 = tomorrow.isAfter(now);
         System.out.println("after1 = " + after1);
+
+
+        LocalDateTime localDateTime1 = now.plusDays(10);
+        long l = localDateTime1.toInstant(ZoneOffset.of("+8")).toEpochMilli();
+        System.out.println("l = " + l);
+        long l1 = now.toInstant(ZoneOffset.of("+8")).toEpochMilli();
+        System.out.println("l1 = " + l1);
+
+        LocalDateTime localDateTime2 = LocalDateTime.ofInstant(Instant.ofEpochMilli(l), ZoneId.systemDefault());
+        System.out.println("localDateTime2 = " + localDateTime2);
+        LocalDateTime localDateTime3 = LocalDateTime.ofInstant(Instant.ofEpochMilli(l1), ZoneId.systemDefault());
+        System.out.println("localDateTime3 = " + localDateTime3);
+
 
         //获取本地日期
         LocalDate localDate = LocalDate.now();
