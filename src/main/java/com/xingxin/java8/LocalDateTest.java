@@ -7,6 +7,8 @@ import java.time.temporal.TemporalAdjusters;
 public class LocalDateTest {
     public static void main(String[] args) {
 
+        System.out.println("=====");
+
 
         LocalDateTime now = LocalDateTime.now();
         LocalDateTime tomorrow = now.plusDays(1);
