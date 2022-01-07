@@ -45,7 +45,7 @@ public class CodeGenerator {
                 .setNaming(NamingStrategy.underline_to_camel)
 //                TODO
                 //需要导入的表的名称,支持多表，"，"隔开
-                .setInclude("tz_lottery_exchange_log")
+                .setInclude("tz_notify_subscription")
                 //需要导入表删除前缀（如：xxx_xx,删除完前缀是xx,只剩下表名）
                 .setTablePrefix("tz_");
 

@@ -1,11 +1,5 @@
 package com.xingxin.test;
 
-
-
-
-
-
-
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.xingxin.enums.SendPrizeEnum;
@@ -29,28 +23,36 @@ import java.util.stream.Collectors;
 public class bsTest {
     public static void main(String[] args) {
 
+        Long shopId = null;
+        boolean equals = Objects.equals(shopId, 1L);
+        System.out.println("equals = " + equals);
+
+
+        String abc = "您已签到${signDaysCount}天，再签到${nextSignDay}天立享";
+        StringUtils.replace(abc, "${signDaysCount}", "1");
+        System.out.println("abc = " + abc);
+
 
         String s324 = "{\"stream\":\"lottery.award\",\"id\":{\"sequence\":0,\"value\":\"1638090804524-0\",\"timestamp\":1638090804524},\"value\":{\"awardLogIds\":\"[106]\"}}";
 
 
-
         String s123 = "{\"amount\":\"0\",\"body\":\"{\\\"id\\\":\\\"274800476405383168\\\",\\\"transactionNumber\\\":\\\"274800476405383169\\\",\\\"amount\\\":\\\"0\\\",\\\"transactionDate\\\":\\\"2021-11-28T15:19:36.1416225+08:00\\\",\\\"transactionType\\\":\\\"pointsConversion\\\",\\\"hotel\\\":{\\\"code\\\":\\\"000001\\\",\\\"name\\\":\\\"浙江宝盛酒店管理公司\\\"},\\\"place\\\":{\\\"code\\\":\\\"0004\\\",\\\"name\\\":\\\"悦活商城\\\"},\\\"description\\\":\\\"抽奖活动奖励积分\\\",\\\"got\\\":{\\\"pointsAccountHistory\\\":[{\\\"id\\\":\\\"274800476405383171\\\",\\\"type\\\":\\\"UD_Sign\\\",\\\"points\\\":\\\"88\\\",\\\"isFee\\\":\\\"False\\\",\\\"description\\\":\\\"抽奖活动奖励积分\\\"}]},\\\"used\\\":{\\\"pointsAccountHistory\\\":[]}}\",\"httpCode\":200,\"id\":\"274800476405383168\",\"success\":true,\"transactionDate\":\"2021-11-28T15:19:36.1416225+08:00\",\"transactionNumber\":\"274800476405383169\",\"transactionType\":\"pointsConversion\"}";
         System.out.println(s123.length());
-        
+
         String str111 = "{\n" +
-                "    \"amount\":\"50.00\",\n" +
-                "    \"body\":\"{\\\"id\\\":\\\"274795840915128320\\\",\\\"transactionNumber\\\":\\\"274795837484187648\\\",\\\"amount\\\":\\\"50.00\\\",\\\"transactionDate\\\":\\\"2021-11-28T15:01:11.007+08:00\\\",\\\"transactionType\\\":\\\"topup\\\",\\\"hotel\\\":{\\\"code\\\":\\\"000001\\\",\\\"name\\\":\\\"浙江宝盛酒店管理公司\\\"},\\\"place\\\":{\\\"code\\\":\\\"0004\\\",\\\"name\\\":\\\"悦活商城\\\"},\\\"description\\\":\\\"抽奖活动奖励会员余额\\\",\\\"got\\\":{\\\"storedValueAccountHistory\\\":[{\\\"id\\\":\\\"274795841573634048\\\",\\\"accountId\\\":\\\"240761571083567104\\\",\\\"membershipCardId\\\":\\\"230213441594343424\\\",\\\"type\\\":\\\"renewalFee\\\",\\\"amount\\\":\\\"50.00\\\",\\\"lastBalance\\\":\\\"806.69\\\",\\\"thisBalance\\\":\\\"856.69\\\",\\\"description\\\":\\\"本次业务单操作会员卡id:230213441594343424 本次共充值:50，会员卡 990188295381 充值:50，账户 赠送账户 充值:50 备注：抽奖活动奖励会员余额\\\",\\\"historyId\\\":\\\"\\\",\\\"revenueType\\\":\\\"other\\\",\\\"isVoid\\\":false,\\\"sourceCode\\\":\\\"JTWEC\\\"}],\\\"pointsAccountHistory\\\":[],\\\"couponTransactionHistory\\\":[],\\\"mileagesHistory\\\":[],\\\"giftCardHistory\\\":[],\\\"privilegeHistory\\\":[]},\\\"used\\\":{\\\"storedValueAccountHistory\\\":[],\\\"pointsAccountHistory\\\":[],\\\"couponTransactionHistory\\\":[],\\\"mileagesHistory\\\":[],\\\"giftCardHistory\\\":[],\\\"privilegeHistory\\\":[]}}\",\n" +
-                "    \"httpCode\":200,\n" +
-                "    \"id\":\"274795840915128320\",\n" +
-                "    \"success\":true,\n" +
-                "    \"transactionDate\":\"2021-11-28T15:01:11.007+08:00\",\n" +
-                "    \"transactionNumber\":\"274795837484187648\",\n" +
-                "    \"transactionType\":\"topup\"\n" +
-                "}";
-            System.out.println(str111.length());
+                                "    \"amount\":\"50.00\",\n" +
+                                "    \"body\":\"{\\\"id\\\":\\\"274795840915128320\\\",\\\"transactionNumber\\\":\\\"274795837484187648\\\",\\\"amount\\\":\\\"50.00\\\",\\\"transactionDate\\\":\\\"2021-11-28T15:01:11.007+08:00\\\",\\\"transactionType\\\":\\\"topup\\\",\\\"hotel\\\":{\\\"code\\\":\\\"000001\\\",\\\"name\\\":\\\"浙江宝盛酒店管理公司\\\"},\\\"place\\\":{\\\"code\\\":\\\"0004\\\",\\\"name\\\":\\\"悦活商城\\\"},\\\"description\\\":\\\"抽奖活动奖励会员余额\\\",\\\"got\\\":{\\\"storedValueAccountHistory\\\":[{\\\"id\\\":\\\"274795841573634048\\\",\\\"accountId\\\":\\\"240761571083567104\\\",\\\"membershipCardId\\\":\\\"230213441594343424\\\",\\\"type\\\":\\\"renewalFee\\\",\\\"amount\\\":\\\"50.00\\\",\\\"lastBalance\\\":\\\"806.69\\\",\\\"thisBalance\\\":\\\"856.69\\\",\\\"description\\\":\\\"本次业务单操作会员卡id:230213441594343424 本次共充值:50，会员卡 990188295381 充值:50，账户 赠送账户 充值:50 备注：抽奖活动奖励会员余额\\\",\\\"historyId\\\":\\\"\\\",\\\"revenueType\\\":\\\"other\\\",\\\"isVoid\\\":false,\\\"sourceCode\\\":\\\"JTWEC\\\"}],\\\"pointsAccountHistory\\\":[],\\\"couponTransactionHistory\\\":[],\\\"mileagesHistory\\\":[],\\\"giftCardHistory\\\":[],\\\"privilegeHistory\\\":[]},\\\"used\\\":{\\\"storedValueAccountHistory\\\":[],\\\"pointsAccountHistory\\\":[],\\\"couponTransactionHistory\\\":[],\\\"mileagesHistory\\\":[],\\\"giftCardHistory\\\":[],\\\"privilegeHistory\\\":[]}}\",\n" +
+                                "    \"httpCode\":200,\n" +
+                                "    \"id\":\"274795840915128320\",\n" +
+                                "    \"success\":true,\n" +
+                                "    \"transactionDate\":\"2021-11-28T15:01:11.007+08:00\",\n" +
+                                "    \"transactionNumber\":\"274795837484187648\",\n" +
+                                "    \"transactionType\":\"topup\"\n" +
+                                "}";
+        System.out.println(str111.length());
 
         String impl = SendPrizeEnum.getImpl(6);
-        System.out.println( impl +"123");
+        System.out.println(impl + "123");
 
 
 //        {"time":"1636983109000"}
@@ -72,7 +74,7 @@ public class bsTest {
         List<Integer> list = JSONObject.parseArray(string1, Integer.class);
         System.out.println("list = " + list);
 
-        String str =  "2w2RYE45iahnF4aiaJ7pHKCJ3Hwnbgnq2PH3AfpQVyWZNHKS9wNgAAOUfCVt9XZMetogNHwc";
+        String str = "2w2RYE45iahnF4aiaJ7pHKCJ3Hwnbgnq2PH3AfpQVyWZNHKS9wNgAAOUfCVt9XZMetogNHwc";
         System.out.println(str.length());
 
         List<Integer> collect = list1.stream().filter(as -> as > 3).collect(Collectors.toList());
@@ -105,7 +107,7 @@ public class bsTest {
         System.out.println(d / 2);
 
         int i = 3;
-        System.out.println( 99 /2);
+        System.out.println(99 / 2);
 
         String s = "123";
         String[] split = s.split(",");
@@ -116,7 +118,7 @@ public class bsTest {
         System.out.println("empty1 = " + empty1);
 
         int ii = 1;
-        System.out.println(ii /2);
+        System.out.println(ii / 2);
 
         Integer integer = null;
 
@@ -164,8 +166,8 @@ public class bsTest {
     @ToString
     public static class DeliveryModeVO {
         private Boolean hasUserPickUp = false;
-        private Boolean hasShopDelivery  = false;
-        private Boolean hasCityDelivery  = false;
+        private Boolean hasShopDelivery = false;
+        private Boolean hasCityDelivery = false;
         private Boolean hasNoDelivery = false;
     }
 }

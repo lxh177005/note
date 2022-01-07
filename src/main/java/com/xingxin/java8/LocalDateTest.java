@@ -1,11 +1,34 @@
 package com.xingxin.java8;
 
+import com.alibaba.fastjson.JSON;
+import org.apache.commons.lang3.StringUtils;
+
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAdjusters;
 
 public class LocalDateTest {
     public static void main(String[] args) {
+
+        // LocalDateTime dateTime = LocalDateTime.of(now.plusDays(-i), signNotifyTemplate.getSignSendTime().toLocalTime());
+        // Date createTime = Date.from(dateTime.atZone(ZoneId.systemDefault()).toInstant());
+
+        LocalDate now1 = LocalDate.now();
+        System.out.println("now1 = " + now1);
+        LocalDate localDate2 = now1.plusDays(-1);
+        System.out.println("localDate2 = " + localDate2);
+
+        String state = "service_id_111";
+
+        String service_id_ = StringUtils.substringAfter(state, "service_id_");
+        System.out.println("service_id_ = " + Integer.parseInt(service_id_));
+
+        String ss = "";
+        String sss = null;
+        String string = JSON.toJSONString(ss);
+        System.out.println("string = " + string);
+        String string1 = JSON.toJSONString(sss);
+        System.out.println("string1 = " + string1);
 
         System.out.println("=====");
 
