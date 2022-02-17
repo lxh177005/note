@@ -23,6 +23,19 @@ import java.util.stream.Collectors;
 public class bsTest {
     public static void main(String[] args) {
 
+        List<Integer> integers = new ArrayList<>();
+        integers.add(1);
+        integers.add(3);
+        integers.add(5);
+        List<Integer> integers2 = new ArrayList<>();
+        integers2.add(1);
+        integers2.add(3);
+        integers2.add(5);
+        integers.removeAll(integers2);
+        System.out.println("integers2 = " + JSON.toJSONString(integers));
+
+
+
         Long shopId = null;
         boolean equals = Objects.equals(shopId, 1L);
         System.out.println("equals = " + equals);
@@ -56,7 +69,7 @@ public class bsTest {
 
 
 //        {"time":"1636983109000"}
-        LocalDateTime localDateTime = LocalDateTime.ofEpochSecond(1636983109, 0, ZoneOffset.ofHours(8));
+        LocalDateTime localDateTime = LocalDateTime.ofEpochSecond(1641798000, 0, ZoneOffset.ofHours(8));
         System.out.println("localDateTime = " + localDateTime);
 
 

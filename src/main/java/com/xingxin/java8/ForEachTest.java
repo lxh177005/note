@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.ToString;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -13,7 +14,7 @@ import java.util.stream.Collectors;
  * @author liuxh
  * @date 2021/7/14
  */
-public class TwoList {
+public class ForEachTest {
     @Data
     @AllArgsConstructor
     @ToString
@@ -57,5 +58,14 @@ public class TwoList {
             });
             System.out.println("student = " + student);
         });
+
+
+        //map遍历
+        Map<String, String> map2 = new HashMap<>();
+        map2.put("k1", "v1");
+        map2.put("k2", "v2");
+        map2.put("k3", "v3");
+        map2.put("k4", "v4");
+        map2.forEach((k, v) -> System.out.println(k + "," + v));
     }
 }

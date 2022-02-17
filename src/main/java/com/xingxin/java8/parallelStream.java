@@ -20,7 +20,7 @@ public class parallelStream {
         System.out.println(end-start);
 
         nums.parallelStream().sorted().collect(Collectors.toList());
-        Long end2 = System.currentTimeMillis();
+        long end2 = System.currentTimeMillis();
         System.out.println(end2-end);
     }
 }
