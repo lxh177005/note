@@ -1,16 +1,15 @@
 package com.xingxin.controller;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.google.zxing.client.j2se.MatrixToImageWriter;
 import com.google.zxing.common.BitMatrix;
 import com.xingxin.annotation.XingxinName;
 import com.xingxin.utils.QRCodeUtils;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -67,5 +66,11 @@ public class TaskController {
     @PostMapping("/ok")
     public String postTest() {
         return "post ok";
+    }
+
+    @GetMapping("/localDateTimeTest")
+    public Boolean localDateTimeTest(@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") @RequestParam("dateTime")  LocalDateTime dateTime) {
+        System.out.println("dateTime = " + dateTime);
+        return true;
     }
 }
