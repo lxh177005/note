@@ -1,0 +1,36 @@
+server:
+  port: 8008
+
+spring:
+  application:
+    name: note
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/note?serverTimezone=UTC
+    username: root
+    password: root
+  rabbitmq:
+    virtual-host: /
+    username: admin
+    password: 123456
+    port: 5672
+    host: 127.0.0.1
+#  aop:
+#    auto: true   # 开启aop
+
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.xingxin.entity
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+logging:
+  config: classpath:log4j2.xml
+
+##tinyid配置  (tinyid.server=localhost:9999/gateway,ip2:port2/prefix,...)
+tinyid:
+  server: 127.0.0.1:9999
+  token: 0f673adf80504e2eaa552f5d791b644c
+
+
