@@ -52,7 +52,7 @@ public class CodeGenerator {
         //4、包名策略配置
         PackageConfig packageConfig = new PackageConfig();
         //这个需要改成自己项目的位置
-        packageConfig.setParent("com.dtminds.bmall")
+        packageConfig.setParent("com.xingxin.bmall")
                 //Dao层的文件
                 .setMapper("dao")
                 //service层的文件
